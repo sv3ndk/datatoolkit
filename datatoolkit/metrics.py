@@ -10,11 +10,9 @@ def rms_log(y_true, y_pred):
 
     see https://www.kaggle.com/wiki/RootMeanSquaredLogarithmicError
 
-    In order to use in a GridSearchCV, use
+    How to use as scoring method in a scikit learn GridSearchCV:
 
-       from sklearn.metrics import make_scorer
-
-       scorer = make_scorer(neg_rmsle, greater_is_better=False)
+       scorer = sklearn.metrics.make_scorer(rms_log, greater_is_better=False)
        GridSearchCV(..., scoring=scorer, ...)
 
     """
